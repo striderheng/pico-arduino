@@ -34,14 +34,18 @@ include_directories(
     "${PICO_SDK_ARDUINO_PATH}/Arduino/ArduinoCore-API/api" 
     "${PICO_SDK_ARDUINO_PATH}/Arduino/ArduinoCore-Pico"
     "${PICO_SDK_ARDUINO_PATH}/Arduino"
+    "${PICO_SDK_ARDUINO_PATH}/Arduino/PDLS_EXT3_Basic-main"
 )
 
 # Arduino PICO Implementation
 file(GLOB ARD_DIR_LIST CONFIGURE_DEPENDS "${PICO_SDK_ARDUINO_PATH}/Arduino/ArduinoCore-API/api/*.cpp" )
 file(GLOB ARD_DIR_PICO_LIST CONFIGURE_DEPENDS "${PICO_SDK_ARDUINO_PATH}/Arduino/ArduinoCore-Pico/*.cpp" )
 
+#EPD PDLS EXT3 library
+file(GLOB ARD_EXT3_PICO_LIST CONFIGURE_DEPENDS "${PICO_SDK_ARDUINO_PATH}/Arduino/PDLS_EXT3_Basic-main/*.cpp" )
+
 # PICO
-add_executable(${ARDUINO_SKETCH_NAME} ${HEADER_LIST} ${ARDUINO_SKETCH_SOURCE} ${ARD_DIR_LIST} ${ARD_DIR_PICO_LIST})
+add_executable(${ARDUINO_SKETCH_NAME} ${HEADER_LIST} ${ARDUINO_SKETCH_SOURCE} ${ARD_DIR_LIST} ${ARD_DIR_PICO_LIST} ${ARD_EXT3_PICO_LIST})
 #pico_enable_stdio_usb("${ARDUINO_SKETCH_NAME}" 1)
 
 # Add pico_stdlib library which aggregates commonly used features
@@ -60,6 +64,7 @@ target_link_libraries("${ARDUINO_SKETCH_NAME}" PRIVATE
     hardware_pio
     hardware_dma
     ${ARDUINO_SKETCH_LIB}
+    
 )
 
 # create map/bin/hex/uf2 file in addition to ELF.

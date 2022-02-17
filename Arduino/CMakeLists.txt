@@ -28,12 +28,16 @@ pico_sdk_init()
 file(GLOB ARD_DIR_LIST CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/ArduinoCore-API/api/*.cpp" )
 file(GLOB ARD_DIR_EXT_LIST CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/ArduinoCore-Pico/*.cpp" )
 
-add_library(arduino ${ARD_DIR_LIST} ${ARD_DIR_EXT_LIST} )
+#EPD PDLS EXT3 library
+file(GLOB ARD_EXT3_PICO_LIST CONFIGURE_DEPENDS "${PROJECT_SOURCE_DIR}/PDLS_EXT3_Basic-main/*.cpp" )
+
+add_library(arduino ${ARD_DIR_LIST} ${ARD_DIR_EXT_LIST} ${ARD_EXT3_PICO_LIST})
 
 target_include_directories(arduino PUBLIC
     "${PICO_SDK_ARDUINO_PATH}/Arduino"
     "${PICO_SDK_ARDUINO_PATH}/Arduino/ArduinoCore-API/api" 
     "${PICO_SDK_ARDUINO_PATH}/Arduino/ArduinoCore-Pico"
+    "${PICO_SDK_ARDUINO_PATH}/Arduino/PDLS_EXT3_Basic-main"
 )
 
 target_link_libraries(arduino
@@ -50,6 +54,12 @@ target_link_libraries(arduino
     hardware_i2c
     hardware_pio
     hardware_dma
+    hV_Colors565
+    hV_Font_Terminal
+    hV_Screen_Buffer
+    hV_Utilities
+    Screen_EPD_EXT3
+	
 )
 
 install(TARGETS arduino
