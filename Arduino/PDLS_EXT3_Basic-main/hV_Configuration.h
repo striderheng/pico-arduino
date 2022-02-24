@@ -260,7 +260,16 @@ const pins_t boardRaspberryPiPico_RP2040 =
     .flashCSS = 15, ///< EXT3 pin 20 Black2 -> GP15
 };
 
-
+const pins_t boardESP8266 =
+{
+    .panelBusy = 5, ///< EXT3 pin 3 Red -> GP13
+    .panelDC = 4, ///< EXT3 pin 4 Orange -> GP12
+    .panelReset = 0, ///< EXT3 pin 5 Yellow -> GP11
+    .flashCS = 2, ///< EXT3 pin 8 Violet -> GP10
+    .panelCS = 17, ///< EXT3 pin 9 Grey -> GP5
+    .panelCSS = NOT_CONNECTED, ///< EXT3 pin 12 Grey2 -> GP14
+    .flashCSS = NOT_CONNECTED, ///< EXT3 pin 20 Black2 -> GP15
+};
 
 ///
 /// @brief Feather M0 configuration, tested

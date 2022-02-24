@@ -6,7 +6,7 @@
 // Project Pervasive Displays Library Suite
 // Based on highView technology
 //
-// Created by Rei Vilo, 28 Jun 2016
+// Created by Rei Vilo, 28 Jun 2016, modified by Gerald Heng Feb 2021
 //
 // Copyright © Rei Vilo, 2010-2021
 // Licence Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported (CC BY-NC-SA 4.0)
