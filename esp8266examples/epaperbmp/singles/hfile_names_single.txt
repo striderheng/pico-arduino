@@ -1,0 +1,3 @@
+#define BW_cold_mono        (uint8_t *) & image_64x64_cold_BW_mono
+#define BW_fish64_mono        (uint8_t *) & image_64x64_fish64_BW_mono
+#define BW_hot-coffee-cup-and-plate64_mono        (uint8_t *) & image_64x64_hot-coffee-cup-and-plate64_BW_mono

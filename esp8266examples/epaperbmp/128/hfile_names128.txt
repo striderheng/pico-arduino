@@ -1,0 +1,4 @@
+#define BW_bear_toy128_mono        (uint8_t *) & image_128x128_bear_toy_BW_mono
+#define BW_fish128_mono        (uint8_t *) & image_128x128_fish_BW_mono
+#define BW_hot_coffee128_mono        (uint8_t *) & image_128x128_hot_coffee_BW_mono
+#define BW_teddy_bear128_mono        (uint8_t *) & image_128x128_teddy_bear_BW_mono
